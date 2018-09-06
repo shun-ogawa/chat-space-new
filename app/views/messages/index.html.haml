@@ -1,13 +1,13 @@
 .side-bar
   .header
     .header__user-name
-      user
+      = current_user.name
     %ul.header__edits
       %li.list
         = link_to do
           = fa_icon 'pencil-square-o', class: 'fa'
       %li.list
-        = link_to do
+        = link_to edit_user_path(current_user) do
           = fa_icon 'cog', class: 'fa'
   .groups
     .group
