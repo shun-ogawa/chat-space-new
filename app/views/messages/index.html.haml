@@ -1,0 +1,63 @@
+.side-bar
+  .header
+    .header__user-name
+      = current_user.name
+    %ul.header__edits
+      %li.list
+        = link_to do
+          = fa_icon 'pencil-square-o', class: 'fa'
+      %li.list
+        = link_to edit_user_path(current_user) do
+          = fa_icon 'cog', class: 'fa'
+  .groups
+    .group
+      .group__name
+        AAA
+      .group__massage
+        aaa
+      .group__name
+        AAA
+      .group__massage
+        aaa
+      .group__name
+        AAA
+      .group__massage
+        aaa
+.main
+  .header
+    .header-left
+      .header-left__title
+        sampleグループ
+      .header-left__members
+        aaa
+        bbb
+    .header-right
+      .header-right__edit
+        edit
+  .messages
+    .message
+      .message__user-name
+        hogehoge
+      .message__date
+        2018/01/01 13:02:42
+      .message__text
+        ホゲホゲ
+      .message__user-name
+        test_user
+      .message__date
+        2018/12/31 13:02:42
+      .message__text
+        test
+      .message__user-name
+        ogawa
+      .message__date
+        2018/01/01 13:02:42
+      .message__text
+        shun
+  .footer
+    .footer-body
+      %input.message{type: "text", placeholder: "type a message"}
+      %label.file
+        %input.image{type:"file"}
+          %i.fa.fa-image
+      %input.submit{type: "submit", value:"Send"}
