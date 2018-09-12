@@ -56,3 +56,9 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'devise'
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+end

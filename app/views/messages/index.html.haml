@@ -4,25 +4,19 @@
       = current_user.name
     %ul.header__edits
       %li.list
-        = link_to do
+        = link_to new_group_path do
           = fa_icon 'pencil-square-o', class: 'fa'
       %li.list
         = link_to edit_user_path(current_user) do
           = fa_icon 'cog', class: 'fa'
   .groups
     .group
-      .group__name
-        AAA
-      .group__massage
-        aaa
-      .group__name
-        AAA
-      .group__massage
-        aaa
-      .group__name
-        AAA
-      .group__massage
-        aaa
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__massage
+            メッセージはまだありません。
 .main
   .header
     .header-left
@@ -58,6 +52,6 @@
     .footer-body
       %input.message{type: "text", placeholder: "type a message"}
       %label.file
-        %input.image{type:"file"}
+        %input.image{type: "file"}
           %i.fa.fa-image
-      %input.submit{type: "submit", value:"Send"}
+      %input.submit{type: "submit", value: "Send"}
