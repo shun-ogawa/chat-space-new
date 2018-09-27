@@ -1,4 +1,7 @@
 class GroupsController < ApplicationController
+
+  before_action :set_group, only: [:edit, :update]
+
   def index
     render :template => "messages/index"
   end
@@ -18,11 +21,13 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = Group.find(params[:id])
   end
 
   def update
     if @group.update(group_params)
-      redirect_to group_message_path(@group), notice: "グループを編集しました"
+      @group.users = User.where(id: params[:group][:user_ids])
+      redirect_to group_messages_path(@group), notice: "グループを編集しました"
     else
       render :edit
     end

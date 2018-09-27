@@ -1,3 +1,5 @@
+= javascript_tag do
+  window.latestMessage = #{raw @messages.last.to_json}
 .side-bar
   .header
     .header__user-name
@@ -16,42 +18,25 @@
           .group__name
             = group.name
           .group__massage
-            メッセージはまだありません。
+            = group.show_last_message
 .main
   .header
     .header-left
       .header-left__title
-        sampleグループ
+        = @group.name
       .header-left__members
-        aaa
-        bbb
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
     .header-right
       .header-right__edit
         edit
   .messages
-    .message
-      .message__user-name
-        hogehoge
-      .message__date
-        2018/01/01 13:02:42
-      .message__text
-        ホゲホゲ
-      .message__user-name
-        test_user
-      .message__date
-        2018/12/31 13:02:42
-      .message__text
-        test
-      .message__user-name
-        ogawa
-      .message__date
-        2018/01/01 13:02:42
-      .message__text
-        shun
+    = render @messages
   .footer
     .footer-body
-      %input.message{type: "text", placeholder: "type a message"}
-      %label.file
-        %input.image{type: "file"}
-          %i.fa.fa-image
-      %input.submit{type: "submit", value: "Send"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: "message", placeholder: "type a message"
+        = f.label :image, class: "file" do
+          = fa_icon "picture-o", class: "fa fa-image"
+          = f.file_field :image, class: "image"
+        = f.submit "Send", class: "submit"
