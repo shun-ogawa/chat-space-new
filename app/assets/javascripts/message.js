@@ -16,7 +16,7 @@ $(function() {
     return html;
   }
 
-  $(".submit").on("submit", function(e) {
+  $("#new_message").on("submit", function(e) {
     e.preventDefault();
     var input = $(".message").val();
     var url = $(this).attr("action");
