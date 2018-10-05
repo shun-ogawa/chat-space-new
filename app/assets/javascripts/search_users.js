@@ -75,8 +75,6 @@ $(function(){
 
   $(document).on("click", ".chat-group-user__btn--add", function(){
     var user = $(this).data();
-    console.log($(this));
-    console.log(user);
     appendGroupUser(user);
     $(this).parent().remove();
   })
