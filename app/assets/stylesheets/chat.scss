@@ -30,12 +30,14 @@
     height: calc(100vh - 100px);
     padding: 0 20px;
     .group {
-        padding: 20px 0 40px;
+      padding: 20px 0 40px;
       &__name {
         font-size: 15px;
+        color: #FFFFFF;
       }
       &__message {
         font-size: 11px;
+        color: #FFFFFF;
       }
     }
   }
