@@ -67,9 +67,21 @@
       float: right;
       &__edit {
         border: 1px solid #38AEF0;
+        color: #38AEF0;
+        float: right;
+        height: 40px;
         line-height: 40px;
-        padding: 0 20px;
         margin-top: 28px;
+        padding: 0 20px;
+      }
+      &__button {
+        cursor: pointer;
+        cursor: hand;
+        outline: none;
+        font-size: 17px;
+        color: #38AEF0;
+        text-decoration: none;
+        border-style: none;
       }
     }
   }

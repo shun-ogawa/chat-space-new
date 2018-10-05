@@ -25,11 +25,14 @@
       .header-left__title
         = @group.name
       .header-left__members
+        Member :
         - @group.group_users.each do |group_user|
           = group_user.user.name
     .header-right
       .header-right__edit
-        edit
+        = link_to edit_group_path(@group.id) do
+          %button.header-right__button
+            Edit
   .messages
     = render @messages
   .footer
