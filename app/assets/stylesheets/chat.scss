@@ -107,6 +107,10 @@
         color: #434A54;
         padding-bottom: 40px;
       }
+      img {
+        object-fit: contain;
+        width: 200px;
+      }
     }
   }
   .footer {

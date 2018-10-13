@@ -11,7 +11,7 @@ $(function() {
                   <div class="message__text">
                     ${message.content}
                   </div>
-                  ${(data.image != null) ? `<img style="margin-top: 10px" src="${data.image}"}` : ''}
+                  ${(message.image != null) ? `<img style="margin-top: 10px" src="${message.image}"}` : ''}
                 </div>`;
     return html;
   }
