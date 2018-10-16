@@ -15,8 +15,9 @@ $(function() {
                   </div>
                   <div class="message__text">
                     ${data.content}
+                    ${(data.image != null) ? `<img style="margin-top: 10px" src="${data.image}"}` : ''}
                   </div>
-                  ${(data.image != null) ? `<img style="margin-top: 10px" src="${data.image}"}` : ''}
+
                 </div>`;
     $(".messages").append(html);
 
