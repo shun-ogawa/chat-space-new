@@ -42,11 +42,13 @@ $(function() {
 
     .done(function(data){
       appendList(data);
-      $('.message').val('');
       // 画面上の最新メッセージ更新
       latestMessage = data;
       // submitのdisbaled属性解除
       $('.submit').attr('disabled', false);
+      // formリセット
+      const form = document.getElementById("new_message");
+      form.reset();
     })
 
     .fail(function() {
